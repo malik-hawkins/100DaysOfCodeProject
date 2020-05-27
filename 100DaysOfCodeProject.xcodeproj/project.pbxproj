@@ -13,9 +13,13 @@
 		84DB7B10247ECD1B00C9CF43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84DB7B0F247ECD1B00C9CF43 /* Assets.xcassets */; };
 		84DB7B13247ECD1B00C9CF43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84DB7B12247ECD1B00C9CF43 /* Preview Assets.xcassets */; };
 		84DB7B16247ECD1B00C9CF43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84DB7B14247ECD1B00C9CF43 /* LaunchScreen.storyboard */; };
+		84DB7B1E247ECDFD00C9CF43 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84DB7B1D247ECDFD00C9CF43 /* GoogleService-Info.plist */; };
+		BDA6837F4C739E49A1B8ADD1 /* Pods_100DaysOfCodeProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05265FD296E6DC04D9BB84D3 /* Pods_100DaysOfCodeProject.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05265FD296E6DC04D9BB84D3 /* Pods_100DaysOfCodeProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_100DaysOfCodeProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E4D137F4A9D7530C6E8F319 /* Pods-100DaysOfCodeProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-100DaysOfCodeProject.release.xcconfig"; path = "Target Support Files/Pods-100DaysOfCodeProject/Pods-100DaysOfCodeProject.release.xcconfig"; sourceTree = "<group>"; };
 		84DB7B06247ECD1900C9CF43 /* 100DaysOfCodeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 100DaysOfCodeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84DB7B09247ECD1900C9CF43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84DB7B0B247ECD1900C9CF43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		84DB7B12247ECD1B00C9CF43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		84DB7B15247ECD1B00C9CF43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84DB7B17247ECD1B00C9CF43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84DB7B1D247ECDFD00C9CF43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D4E1CA6CB4322EF42CF6E590 /* Pods-100DaysOfCodeProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-100DaysOfCodeProject.debug.xcconfig"; path = "Target Support Files/Pods-100DaysOfCodeProject/Pods-100DaysOfCodeProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDA6837F4C739E49A1B8ADD1 /* Pods_100DaysOfCodeProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EA7BE1524189FD5CF4953DD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4E1CA6CB4322EF42CF6E590 /* Pods-100DaysOfCodeProject.debug.xcconfig */,
+				7E4D137F4A9D7530C6E8F319 /* Pods-100DaysOfCodeProject.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		84DB7AFD247ECD1900C9CF43 = {
 			isa = PBXGroup;
 			children = (
 				84DB7B08247ECD1900C9CF43 /* 100DaysOfCodeProject */,
 				84DB7B07247ECD1900C9CF43 /* Products */,
+				1EA7BE1524189FD5CF4953DD /* Pods */,
+				E8211893AC6E9B40734BDEB1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +81,7 @@
 				84DB7B0F247ECD1B00C9CF43 /* Assets.xcassets */,
 				84DB7B14247ECD1B00C9CF43 /* LaunchScreen.storyboard */,
 				84DB7B17247ECD1B00C9CF43 /* Info.plist */,
+				84DB7B1D247ECDFD00C9CF43 /* GoogleService-Info.plist */,
 				84DB7B11247ECD1B00C9CF43 /* Preview Content */,
 			);
 			path = 100DaysOfCodeProject;
@@ -75,6 +95,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E8211893AC6E9B40734BDEB1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05265FD296E6DC04D9BB84D3 /* Pods_100DaysOfCodeProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84DB7B1A247ECD1B00C9CF43 /* Build configuration list for PBXNativeTarget "100DaysOfCodeProject" */;
 			buildPhases = (
+				BE837274CEAAA5E01799A82E /* [CP] Check Pods Manifest.lock */,
 				84DB7B02247ECD1900C9CF43 /* Sources */,
 				84DB7B03247ECD1900C9CF43 /* Frameworks */,
 				84DB7B04247ECD1900C9CF43 /* Resources */,
+				D7950FCB496FA6A788436AA2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -134,12 +164,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				84DB7B16247ECD1B00C9CF43 /* LaunchScreen.storyboard in Resources */,
+				84DB7B1E247ECDFD00C9CF43 /* GoogleService-Info.plist in Resources */,
 				84DB7B13247ECD1B00C9CF43 /* Preview Assets.xcassets in Resources */,
 				84DB7B10247ECD1B00C9CF43 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BE837274CEAAA5E01799A82E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-100DaysOfCodeProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7950FCB496FA6A788436AA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-100DaysOfCodeProject/Pods-100DaysOfCodeProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-100DaysOfCodeProject/Pods-100DaysOfCodeProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-100DaysOfCodeProject/Pods-100DaysOfCodeProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84DB7B02247ECD1900C9CF43 /* Sources */ = {
@@ -282,6 +355,7 @@
 		};
 		84DB7B1B247ECD1B00C9CF43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4E1CA6CB4322EF42CF6E590 /* Pods-100DaysOfCodeProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +376,7 @@
 		};
 		84DB7B1C247ECD1B00C9CF43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E4D137F4A9D7530C6E8F319 /* Pods-100DaysOfCodeProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
