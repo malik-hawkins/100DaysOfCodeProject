@@ -13,6 +13,7 @@ struct Welcome: View {
     @State var userIsntRegistered: Bool = false
     @State var forgotPassword: Bool = false
     
+    @State private var email: String = ""
     @State private var username: String = ""
     @State private var password: String = ""
     
@@ -41,7 +42,6 @@ struct Welcome: View {
                         .cornerRadius(6)
                         .font(.system(size: 13, weight:.bold)).foregroundColor(Color.primary)
                     Button(action: {
-                        print("Implement Forgot Password!")
                         self.forgotPassword.toggle()
                     }) {
                         Text("Forgot Password?").font(.system(size: 14)).fontWeight(.semibold)
@@ -62,7 +62,8 @@ struct Welcome: View {
                         
                         Spacer()
                         Button(action: {
-                            print("Implement next button")
+//                            print("Implement next button")
+                            goHomeFromLogin()
                         }) {
                             Text("Next")
                                 .font(.system(size: 15, weight:.bold))
@@ -79,12 +80,12 @@ struct Welcome: View {
     } //Ending body
 }
 
-//func goToSignUpScreen(){
-//    if let window = UIApplication.shared.windows.first {
-//        window.rootViewController = UIHostingController(rootView: SignUp())
-//        window.makeKeyAndVisible()
-//    }
-//}
+func goHomeFromLogin(){
+    if let window = UIApplication.shared.windows.first {
+        window.rootViewController = UIHostingController(rootView: Home())
+        window.makeKeyAndVisible()
+    }
+}
 
 struct Welcome_Previews: PreviewProvider {
     static var previews: some View {
