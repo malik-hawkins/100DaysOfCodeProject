@@ -7,11 +7,20 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
 struct ForgotPassword: View {
     
     @State private var email: String = ""
     @State private var password: String = ""
+    @State private var alertMessage = "Something went wrong"
+    @State private var showAlert = false
+    
+    var alert: Alert {
+        Alert(title: Text("Invalid Input"), message: Text(alertMessage), dismissButton: .default(Text("Dismiss")))
+    }
+    
     
     var body: some View {
         GeometryReader{ geo in
@@ -35,11 +44,13 @@ struct ForgotPassword: View {
                     
                     Spacer()
                     Spacer()
- 
+                    
                 }.padding(.leading,40).padding(.trailing,40)
                 
                 Button(action: {
-                    print("Implement next button")
+                    
+                    self.sendResetPassword()
+                    
                 }) {
                     Text("Next")
                         .font(.system(size: 15, weight:.bold))
@@ -47,13 +58,30 @@ struct ForgotPassword: View {
                         .background(Color.init(red: 14/255, green: 219/255, blue: 139/255))
                         .foregroundColor(Color.white)
                         .cornerRadius(6)
-                }.padding(.horizontal)
+                }.padding(.horizontal).alert(isPresented: self.$showAlert, content: {self.alert})
                 
             }
         }
+    } // Ending body
+    
+    func sendResetPassword(){
+        
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            if error != nil{
+                self.alertMessage = error?.localizedDescription ?? ""
+                self.showAlert = true
+                print(error?.localizedDescription ?? "")
+            } else {
+                self.showAlert = true
+                self.alertMessage = "Reset password email sent. Go back to the welcome page to sign in."
+                print("Reset password sent to \(self.email)")
+            }
+        }
+        
     }
     
-}
+} // Ending view
+
 
 struct ForgotPassword_Previews: PreviewProvider {
     static var previews: some View {
