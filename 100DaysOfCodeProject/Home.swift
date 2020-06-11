@@ -7,10 +7,46 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
 struct Home: View {
     var body: some View {
-        Text("Welcome to the App")
+        VStack(){
+            Text("Welcome to the App").padding()
+            Button(action: {
+                
+                self.signOut()
+                
+            }) {
+                Text("Sign Out")
+                    .font(.system(size: 15, weight:.bold))
+                    .frame(minWidth: 0, maxWidth: .greatestFiniteMagnitude, minHeight: 50)
+                    .background(Color.init(red: 14/255, green: 219/255, blue: 139/255))
+                    .foregroundColor(Color.white)
+                    .cornerRadius(6)
+            }.padding(.horizontal)
+        }
+        
+    } // Ending body
+    
+    func signOut(){
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            print("user signed out successfully")
+            goToWelcomePage()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+    }
+    
+} // Ending view
+
+func goToWelcomePage(){
+    if let window = UIApplication.shared.windows.first {
+        window.rootViewController = UIHostingController(rootView: Welcome())
+        window.makeKeyAndVisible()
     }
 }
 

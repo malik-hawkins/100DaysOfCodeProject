@@ -57,7 +57,7 @@ struct SignUp: View {
                 }.padding(.leading,40).padding(.trailing,40)
                 Button(action: {
                     
-                    self.login()
+                    self.signUp()
                     
                 }) {
                     Text("Next")
@@ -73,7 +73,7 @@ struct SignUp: View {
         
     }   //Ending body
     
-    func login(){
+    func signUp(){
         
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             

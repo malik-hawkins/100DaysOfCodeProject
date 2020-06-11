@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
 struct Welcome: View {
     
@@ -14,8 +16,14 @@ struct Welcome: View {
     @State var forgotPassword: Bool = false
     
     @State private var email: String = ""
-    @State private var username: String = ""
     @State private var password: String = ""
+    @State private var showAlert = false
+    @State private var alertMessage = "Something went wrong"
+    
+    
+    var alert: Alert {
+        Alert(title: Text("Invalid Input"), message: Text(alertMessage), dismissButton: .default(Text("Dismiss")))
+    }
     
     var body: some View {
         GeometryReader{ geo in
@@ -30,7 +38,7 @@ struct Welcome: View {
                         .fontWeight(.semibold)
                 }.padding(.top,100).padding(.leading,40)
                 VStack(alignment: .trailing){
-                    TextField("Enter Username", text: self.$username)
+                    TextField("Enter Email", text: self.$email)
                         .padding(.all)
                         .frame(height:50)
                         .background(Color.init(white: 0.95))
@@ -62,8 +70,9 @@ struct Welcome: View {
                         
                         Spacer()
                         Button(action: {
-//                            print("Implement next button")
-                            goHomeFromLogin()
+                            
+                            self.signIn()
+                            
                         }) {
                             Text("Next")
                                 .font(.system(size: 15, weight:.bold))
@@ -73,12 +82,31 @@ struct Welcome: View {
                                 .cornerRadius(6)
                         }
                     }
-                }.padding(.leading,40).padding(.trailing,40)
+                }.padding(.leading,40).padding(.trailing,40).alert(isPresented: self.$showAlert, content: {self.alert})
             }
         }
         
-    } //Ending body
-}
+    } // Ending body
+    
+    func signIn(){
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            
+            // Handling errors and continuing
+            if error != nil {
+                self.alertMessage = error?.localizedDescription ?? ""
+                self.showAlert = true
+                print(error?.localizedDescription ?? "")
+            } else {
+                print("\(self.email) signed in successfully")
+                goHomeFromLogin()
+                
+            }
+        }
+        
+    }
+    
+} // Ending view
 
 func goHomeFromLogin(){
     if let window = UIApplication.shared.windows.first {
